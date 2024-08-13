@@ -1,23 +1,22 @@
-import logo from './logo.svg'
+import React from 'react'
 import './App.css'
+import Header from './Main/Header'
+import Box from '@mui/material/Box'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Box
+        component="img"
+        src={`${process.env.PUBLIC_URL}/main-display.gif`}
+        alt="Animated GIF"
+        sx={{
+          width: '100%', // Make the GIF take up the full width of its container
+          height: 'auto', // Maintain aspect ratio
+          mt: '64px', // Add some margin on top
+        }}
+      />
     </div>
   )
 }
