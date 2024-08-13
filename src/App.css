@@ -1,6 +1,9 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the App takes full height of the viewport */
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -26,6 +29,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.main-content {
+  flex: 1; /* Allows the main content area to take up available space */
+}
+
+.main-content img {
+  width: 100%; /* Make the GIF take up the full width of its container */
+  height: auto; /* Maintain aspect ratio */
 }
 
 @keyframes App-logo-spin {
