@@ -37,7 +37,44 @@ body {
 }
 
 .main-content {
+  position: relative; /* Make this container relative for absolute positioning of text */
   flex: 1; /* Allows the main content area to take up available space */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.overlay-text-small {
+  position: absolute; /* Position text on top of the image */
+  top: 12%; /* Adjust this value to move text lower from the top */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center text horizontally and adjust vertical position */
+  color: white; /* Text color */
+  font-size: 2rem; /* Adjust as needed */
+  font-weight: bold; /* Make text bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: add shadow for better visibility */
+  text-align: center; /* Center the text horizontally within its container */
+  width: 80%; /* Adjust the width to make the text area wider */
+}
+
+.overlay-text-big {
+  position: absolute; /* Position text on top of the image */
+  top: +20%; /* Adjust this value to move text lower from the top */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center text horizontally and adjust vertical position */
+  color: white; /* Text color */
+  font-size: 4rem; /* Adjust as needed */
+  font-weight: bold; /* Make text bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: add shadow for better visibility */
+  text-align: center; /* Center the text horizontally within its container */
+  width: 80%; /* Adjust the width to make the text area wider */
+  white-space: normal; /* Allow text to wrap normally */
 }
 
 .main-content img {

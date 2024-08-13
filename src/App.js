@@ -14,11 +14,12 @@ function App() {
           src={`${process.env.PUBLIC_URL}/main-display.gif`}
           alt="Animated GIF"
           className="main-image"
-          sx={{
-            width: "100%", // Make the GIF take up the full width of its container
-            height: "auto", // Maintain aspect ratio
-          }}
         />
+        <div className="overlay-text-small">
+          Mūsų misija – suteikti jums nepakartojamus motociklų patyrimus,
+          nepriklausomai nuo jūsų patirties lygio ar poreikių
+        </div>
+        <div className="overlay-text-big">JŪSŲ NUOTYKIAI PRASIDEDA ČIA</div>
       </div>
       <Footer />
     </div>
