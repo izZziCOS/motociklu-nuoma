@@ -4,7 +4,6 @@
   min-height: 100vh; /* Ensure the App takes full height of the viewport */
 }
 
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -31,7 +30,8 @@
   color: #61dafb;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
