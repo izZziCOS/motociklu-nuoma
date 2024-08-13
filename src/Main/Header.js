@@ -7,7 +7,7 @@ import OutlinedButton from '../Reusable/OutlinedButton'
 
 function Header() {
     const handlePhoneCall = () => {
-        window.location.href = 'tel:+37064307225'; // Initiates phone call to the specified number
+        window.location.href = 'tel:+37064307225' // Initiates phone call to the specified number
       }
 
     return (
