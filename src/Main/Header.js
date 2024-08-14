@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import OutlinedButton from "../Reusable/OutlinedButton"
+import PopupDialog from "../Reusable/PopupDialog"
 import "./Header.css"
 
 function Header() {
@@ -30,7 +31,11 @@ function Header() {
         {/* Right side: Container for Buttons */}
         <Box className="rightSideBox">
           <OutlinedButton text="+37064307225" onClick={handlePhoneCall} />
-          <OutlinedButton text="Pateikti užklausą" onClick={handlePhoneCall} />
+          <PopupDialog
+            buttonText="Pateikti užklausą"
+            dialogTitle="Sužinokite apie motociklo nuomą per 10 minučių"
+            dialogContent="Palikite kontaktinius duomenis ir mes jums paskambinsime 10 minučių bėgyje."
+          />
         </Box>
       </Toolbar>
     </AppBar>
