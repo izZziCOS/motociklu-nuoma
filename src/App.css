@@ -1,92 +1,55 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensure the App takes full height of the viewport */
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
+  position: relative;
+  height: 100vh; /* Full viewport height */
 }
 
 .main-content {
-  position: relative; /* Make this container relative for absolute positioning of text */
-  flex: 1; /* Allows the main content area to take up available space */
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Place GIF in the background */
+}
+
+.overlay-text-small,
+.overlay-text-big {
+  position: absolute;
+  z-index: 2; /* Place text above the GIF */
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .overlay-text-small {
-  position: absolute; /* Position text on top of the image */
-  top: 12%; /* Adjust this value to move text lower from the top */
-  left: 50%; /* Center horizontally */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Center text horizontally and adjust vertical position */
-  color: white; /* Text color */
-  font-size: 2rem; /* Adjust as needed */
-  font-weight: bold; /* Make text bold */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: add shadow for better visibility */
-  text-align: center; /* Center the text horizontally within its container */
-  width: 80%; /* Adjust the width to make the text area wider */
+  top: 10%;
+  font-size: 2.2rem;
 }
 
 .overlay-text-big {
-  position: absolute; /* Position text on top of the image */
-  top: +20%; /* Adjust this value to move text lower from the top */
-  left: 50%; /* Center horizontally */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Center text horizontally and adjust vertical position */
-  color: white; /* Text color */
-  font-size: 4rem; /* Adjust as needed */
-  font-weight: bold; /* Make text bold */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Optional: add shadow for better visibility */
-  text-align: center; /* Center the text horizontally within its container */
-  width: 80%; /* Adjust the width to make the text area wider */
-  white-space: normal; /* Allow text to wrap normally */
+  top: 15%;
+  font-size: 3.5rem;
+  font-weight: bold;
 }
 
-.main-content img {
-  width: 100%; /* Make the GIF take up the full width of its container */
-  height: auto; /* Maintain aspect ratio */
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-switcher-container {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  z-index: 3; /* Place content switcher above the text and GIF */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 10px; /* Optional: Add rounded corners */
 }

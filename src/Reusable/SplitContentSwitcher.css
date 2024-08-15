@@ -1,0 +1,58 @@
+.split-container {
+  display: flex;
+  position: absolute;
+  z-index: 3; /* Ensure it’s above other content */
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Buttons on the sides */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.split-image,
+.split-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.content-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.content-text {
+  left: 60%;
+  color: white;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust to keep centered */
+  color: white !important;
+  z-index: 4;
+  pointer-events: auto;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Optional: add a semi-transparent background */
+}
+
+.nav-button.left {
+  position: fixed;
+  left: 17%; /* Position closer to the edge */
+  top: 60%;
+}
+
+.nav-button.right {
+  position: fixed;
+  right: 17%; /* Position closer to the edge */
+  top: 60%;
+}

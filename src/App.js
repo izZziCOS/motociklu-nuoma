@@ -3,6 +3,7 @@ import "./App.css"
 import Header from "./Main/Header"
 import Box from "@mui/material/Box"
 import Footer from "./Main/Footer"
+import SplitContentSwitcher from "./Reusable/SplitContentSwitcher"
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           nepriklausomai nuo jūsų patirties lygio ar poreikių
         </div>
         <div className="overlay-text-big">JŪSŲ NUOTYKIAI PRASIDEDA ČIA</div>
+        <div className="content-switcher-container">
+          <SplitContentSwitcher />
+        </div>
       </div>
       <Footer />
     </div>
