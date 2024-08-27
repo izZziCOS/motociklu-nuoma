@@ -26,6 +26,13 @@
   position: absolute; /* Allow absolute positioning */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust to keep centered */
+  transition:
+    transform 0.3s ease,
+    scale 0.3s ease; /* Smooth scaling transition */
+}
+
+.content-image:hover {
+  transform: translateX(-50%) scale(1.1); /* Scale the image slightly on hover */
 }
 
 .content-text {
