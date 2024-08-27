@@ -33,8 +33,7 @@ function App() {
           className="main-image"
         />
         <div className="overlay-text-small">
-          Mūsų misija – suteikti jums nepakartojamus motociklų patyrimus,
-          nepriklausomai nuo jūsų patirties lygio ar poreikių
+          Mūsų misija – suteikti jums nepakartojamus motociklų patyrimus
         </div>
         <div className="overlay-text-big">JŪSŲ NUOTYKIAI PRASIDEDA ČIA</div>
         <div className="content-switcher-container">
