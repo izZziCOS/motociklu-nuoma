@@ -6,7 +6,7 @@
   display: flex; /* Flexbox for centering content */
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
-  position: relative; /* Normal flow positioning */
+  position: absolute; /* Normal flow positioning */
 }
 
 .footer-text {
