@@ -27,7 +27,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
