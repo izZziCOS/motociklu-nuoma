@@ -13,7 +13,9 @@ const contentData = [
            <strong>Elektronika:</strong>  IMU.<br>
            <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
            <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.`,
+           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.
+           <br><br>
+           <strong>Kaina 1d. -</strong>  150€<br>`,
   },
   {
     imageSrc: `${process.env.PUBLIC_URL}/motorcycle-kawasaki2.jpg`,
@@ -21,9 +23,20 @@ const contentData = [
            <strong>Elektronika:</strong>  IMU.<br>
            <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
            <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.`,
+           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.
+           <br><br>
+           <strong>Kaina 1d. -</strong>  150€<br>`,
   },
-  // Add more content objects as needed
+  {
+    imageSrc: `${process.env.PUBLIC_URL}/motorcycle-honda.jpg`,
+    text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
+           <strong>Elektronika:</strong>  IMU.<br>
+           <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
+           <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
+           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.
+           <br><br>
+           <strong>Kaina 1d. -</strong>  150€<br>`,
+  },
 ]
 
 function SplitContentSwitcher() {
