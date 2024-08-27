@@ -17,7 +17,11 @@ const contentData = [
   },
   {
     imageSrc: `${process.env.PUBLIC_URL}/motorcycle-kawasaki2.jpg`,
-    text: "This is the second content text. Describe something about the second image.This is the second content text. Describe something about the second image.",
+    text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
+           <strong>Elektronika:</strong>  IMU.<br>
+           <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
+           <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
+           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.`,
   },
   // Add more content objects as needed
 ]

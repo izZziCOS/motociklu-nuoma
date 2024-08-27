@@ -22,6 +22,7 @@ function App() {
         </div>
         <div className="overlay-text-big">JŪSŲ NUOTYKIAI PRASIDEDA ČIA</div>
         <div className="content-switcher-container">
+          <div className="overlay-text-big">Nuomojami motociklai</div>
           <SplitContentSwitcher />
         </div>
       </div>

@@ -1,10 +1,12 @@
 .split-container {
   display: flex;
   position: absolute;
-  z-index: 3; /* Ensure it’s above other content */
-  align-items: center; /* Center content vertically */
-  justify-content: space-between; /* Buttons on the sides */
-  overflow: hidden; /* Prevent overflow */
+  z-index: 3;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; /* Ensure the container takes up the full viewport height */
 }
 
 .split-image,
@@ -17,42 +19,37 @@
 }
 
 .content-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  width: 100%; /* Set the image to take up the full width of its container */
+  max-width: 500px; /* Set a max-width to control the image size */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+  position: absolute; /* Allow absolute positioning */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust to keep centered */
 }
 
 .content-text {
-  left: 60%;
   color: white;
   text-align: left;
   font-size: 1.2rem;
   line-height: 1.5;
+  padding: 20px;
 }
 
 .nav-button {
   position: absolute;
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust to keep centered */
+  top: 50%;
+  transform: translateY(-50%);
   color: white !important;
   z-index: 4;
   pointer-events: auto;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Optional: add a semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .nav-button.left {
-  position: fixed;
-  left: 17%; /* Position closer to the edge */
-  top: 60%;
+  right: 40%;
 }
 
 .nav-button.right {
-  position: fixed;
-  right: 17%; /* Position closer to the edge */
-  top: 60%;
+  right: 2%;
 }
