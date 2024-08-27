@@ -9,13 +9,20 @@ import "./Header.css"
 
 function Header() {
   const handlePhoneCall = () => {
-    window.location.href = "tel:+37064307225" // Initiates phone call to the specified number
+    window.location.href = "tel:+37064307225" // Initiates phone call
+  }
+
+  const handleWhatsApp = () => {
+    window.location.href = "https://wa.me/37064307225" // Initiates WhatsApp chat
+  }
+
+  const handleViber = () => {
+    window.location.href = "viber://chat?number=%2B37064307225" // Initiates Viber chat
   }
 
   return (
     <AppBar position="fixed" className="appBar">
       <Toolbar className="toolbar">
-        {/* Left side: Logo and Text */}
         <Box className="leftSideBox">
           <Box
             component="img"
@@ -27,10 +34,10 @@ function Header() {
             Žiedo motociklų nuoma Lietuvoje
           </Typography>
         </Box>
-
-        {/* Right side: Container for Buttons */}
         <Box className="rightSideBox">
           <OutlinedButton text="+37064307225" onClick={handlePhoneCall} />
+          <OutlinedButton text="WhatsApp" onClick={handleWhatsApp} />
+          <OutlinedButton text="Viber" onClick={handleViber} />
           <PopupDialog
             buttonText="Pateikti užklausą"
             dialogTitle="Sužinokite apie motociklo nuomą per 10 minučių"
