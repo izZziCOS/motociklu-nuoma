@@ -13,7 +13,7 @@ const contentData = [
            <strong>Elektronika:</strong>  IMU.<br>
            <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
            <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.
+           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.
            <br><br>
            <strong>Kaina 1d. -</strong>  150€<br>`,
   },
@@ -23,7 +23,7 @@ const contentData = [
            <strong>Elektronika:</strong>  IMU.<br>
            <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
            <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.
+           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.
            <br><br>
            <strong>Kaina 1d. -</strong>  150€<br>`,
   },
@@ -33,7 +33,7 @@ const contentData = [
            <strong>Elektronika:</strong>  IMU.<br>
            <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
            <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greito pavarų perjungimo sistema.
+           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.
            <br><br>
            <strong>Kaina 1d. -</strong>  150€<br>`,
   },
