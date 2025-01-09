@@ -14,7 +14,6 @@
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
 }
 
@@ -54,9 +53,9 @@
 }
 
 .nav-button.left {
-  right: 40%;
+  left: 5%;
 }
 
 .nav-button.right {
-  right: 2%;
+  right: 5%;
 }

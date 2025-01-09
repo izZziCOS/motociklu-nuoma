@@ -11,29 +11,32 @@ const contentData = [
     imageSrc: `${process.env.PUBLIC_URL}/motorcycle-kawasaki.jpg`,
     text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
            <strong>Elektronika:</strong>  IMU.<br>
-           <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
-           <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.
+           <strong>Pakaba:</strong>  KYB teleskopinė pakaba.<br>
+           <strong>Transmisija:</strong>  6 greičių mechaninė pavarų dėžė su šlapia sankaba.<br>
+           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.<br>
+           <strong>Top greitis:</strong>  280km/h.
            <br><br>
-           <strong>Kaina 1d. -</strong>  150€<br>`,
+           <strong>Kaina 1d. -</strong>  130€<br>`,
   },
   {
     imageSrc: `${process.env.PUBLIC_URL}/motorcycle-kawasaki2.jpg`,
     text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
            <strong>Elektronika:</strong>  IMU.<br>
            <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
-           <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.
+           <strong>Transmisija:</strong>  6 greičių mechaninė pavarų dėžė su šlapia sankaba.<br>
+           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.<br>
+           <strong>Top greitis:</strong>  290km/h.
            <br><br>
-           <strong>Kaina 1d. -</strong>  150€<br>`,
+           <strong>Kaina 1d. -</strong>  140€<br>`,
   },
   {
     imageSrc: `${process.env.PUBLIC_URL}/motorcycle-honda.jpg`,
     text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
            <strong>Elektronika:</strong>  IMU.<br>
-           <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
-           <strong>Aerodinamika:</strong>  Integruoti sparnai.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.
+           <strong>Pakaba:</strong>  Öhlins  Series 3 elektroninė pakaba.<br>
+           <strong>Transmisija:</strong>  6 greičių mechaninė pavarų dėžė su šlapia sankaba.<br>
+           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.<br>
+           <strong>Top greitis:</strong>  310km/h.
            <br><br>
            <strong>Kaina 1d. -</strong>  150€<br>`,
   },
