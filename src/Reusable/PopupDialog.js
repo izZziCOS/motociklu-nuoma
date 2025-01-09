@@ -9,6 +9,9 @@ import OutlinedInput from "./OutlinedInput"
 
 function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
   const [open, setOpen] = useState(false)
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState()
+  const [errors, setErrors] = useState({ name: "", phone: "" })
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -16,6 +19,30 @@ function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
 
   const handleClose = () => {
     setOpen(false)
+  }
+
+  const handleSubmit = () => {
+    const newErrors = {}
+    if (!name.trim()) {
+      newErrors.name = "Vardas yra privalomas."
+    }
+
+    const phoneRegex = /^\+\d+$/
+    if (!phone.trim()) {
+      newErrors.phone = "Telefono numeris yra privalomas."
+    } else if (!phoneRegex.test(phone)) {
+      newErrors.phone =
+        "Telefono numeris turi prasidėti su + ir būti sudarytas tik iš skaičių."
+    }
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+    } else {
+      // Clear errors, remove phone and name from memory and proceed
+      setErrors({})
+      handleClose()
+      setPhone()
+      setName("")
+    }
   }
 
   return (
@@ -29,16 +56,28 @@ function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
           <div style={{ marginTop: "16px" }}>
             {" "}
             {/* Optional margin for spacing */}
-            <OutlinedInput label="Jūsų vardas *" />
+            <OutlinedInput
+              label="Jūsų vardas *"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              error={!!errors.name}
+              helperText={errors.name}
+            />
           </div>
           <div style={{ marginTop: "16px" }}>
             {" "}
             {/* Optional margin for spacing */}
-            <OutlinedInput label="Telefono numeris *" />
+            <OutlinedInput
+              label="Telefono numeris *"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              error={!!errors.phone}
+              helperText={errors.phone}
+            />
           </div>
         </DialogContent>
         <DialogActions>
-          <Button>Pateikti užklausą</Button>
+          <Button onClick={handleSubmit}>Pateikti užklausą</Button>
           <Button onClick={handleClose} color="primary">
             Uždaryti
           </Button>
