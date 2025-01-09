@@ -10,7 +10,7 @@ import OutlinedInput from "./OutlinedInput"
 function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
   const [open, setOpen] = useState(false)
   const [name, setName] = useState("")
-  const [phone, setPhone] = useState()
+  const [phone, setPhone] = useState("")
   const [errors, setErrors] = useState({ name: "", phone: "" })
 
   const handleClickOpen = () => {
@@ -18,6 +18,8 @@ function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
   }
 
   const handleClose = () => {
+    setPhone()
+    setName("")
     setOpen(false)
   }
 
@@ -39,7 +41,7 @@ function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
     } else {
       // Clear errors, remove phone and name from memory and proceed
       setErrors({})
-      handleClose()
+      setOpen(false)
       setPhone()
       setName("")
     }
