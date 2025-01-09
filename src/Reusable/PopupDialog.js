@@ -18,6 +18,7 @@ function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
   }
 
   const handleClose = () => {
+    setErrors({})
     setPhone()
     setName("")
     setOpen(false)
