@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/motociklu-nuoma/static/css/main.5124e6c1.css",
-    "main.js": "/motociklu-nuoma/static/js/main.caf2325f.js",
+    "main.css": "/motociklu-nuoma/static/css/main.5b7b74af.css",
+    "main.js": "/motociklu-nuoma/static/js/main.b1420c09.js",
     "static/js/453.3cf238f4.chunk.js": "/motociklu-nuoma/static/js/453.3cf238f4.chunk.js",
     "index.html": "/motociklu-nuoma/index.html",
-    "main.5124e6c1.css.map": "/motociklu-nuoma/static/css/main.5124e6c1.css.map",
-    "main.caf2325f.js.map": "/motociklu-nuoma/static/js/main.caf2325f.js.map",
+    "main.5b7b74af.css.map": "/motociklu-nuoma/static/css/main.5b7b74af.css.map",
+    "main.b1420c09.js.map": "/motociklu-nuoma/static/js/main.b1420c09.js.map",
     "453.3cf238f4.chunk.js.map": "/motociklu-nuoma/static/js/453.3cf238f4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5124e6c1.css",
-    "static/js/main.caf2325f.js"
+    "static/css/main.5b7b74af.css",
+    "static/js/main.b1420c09.js"
   ]
 }
