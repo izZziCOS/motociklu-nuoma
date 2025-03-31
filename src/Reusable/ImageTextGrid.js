@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import CardMedia from "@mui/material/CardMedia"
-import "./ImageTextGrid.css" // Import the CSS file
+import "./ImageTextGrid.css"
 
 const ImageTextGrid = ({ items }) => {
   return (

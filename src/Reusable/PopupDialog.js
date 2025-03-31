@@ -58,7 +58,6 @@ function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
           <div>{dialogContent}</div>
           <div style={{ marginTop: "16px" }}>
             {" "}
-            {/* Optional margin for spacing */}
             <OutlinedInput
               label="Jūsų vardas *"
               value={name}
@@ -69,7 +68,6 @@ function PopupDialog({ buttonText, dialogTitle, dialogContent }) {
           </div>
           <div style={{ marginTop: "16px" }}>
             {" "}
-            {/* Optional margin for spacing */}
             <OutlinedInput
               label="Telefono numeris *"
               value={phone}

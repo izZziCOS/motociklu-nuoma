@@ -1,15 +1,15 @@
 import React from "react"
 import Button from "@mui/material/Button"
-import "./OutlinedButton.css" // Import the CSS file
+import "./OutlinedButton.css"
 
 function OutlinedButton({ text, onClick, ...props }) {
   return (
     <Button
-      variant="outlined" // Ensures the button has a border
-      color="inherit" // Inherit color from the theme (e.g., white border, white text)
-      className="outlined-button" // Apply the custom CSS class
+      variant="outlined"
+      color="inherit"
+      className="outlined-button"
       onClick={onClick}
-      {...props} // Spread additional props
+      {...props}
     >
       {text}
     </Button>

@@ -1,14 +1,14 @@
 .footer {
-  background-color: black; /* Black background */
-  color: white; /* White text color */
-  width: 100%; /* Full width of the viewport */
-  height: 60px; /* Height of the footer */
-  display: flex; /* Flexbox for centering content */
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  position: absolute; /* Normal flow positioning */
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 
 .footer-text {
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
