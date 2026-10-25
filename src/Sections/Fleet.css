@@ -1,0 +1,150 @@
+.fleet {
+  padding-top: 112px;
+  padding-bottom: 48px;
+}
+
+.fleet-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.fleet-intro {
+  margin: 0;
+  max-width: 380px;
+  color: var(--text-muted);
+}
+
+.fleet-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.bike-card {
+  flex: 1 1 340px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: border-color 0.2s ease;
+}
+
+.bike-card:hover {
+  border-color: var(--border-strong);
+}
+
+.bike-card-media {
+  padding: 16px;
+  background: var(--surface-2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bike-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 800 / 540;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.bike-card:hover .bike-card-image {
+  transform: scale(1.04);
+}
+
+.bike-card-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.bike-card-brand {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.bike-card-model {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.bike-card-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0 4px;
+  font-size: 15px;
+}
+
+.bike-card-specs > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a2d32;
+}
+
+.bike-card-specs > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.bike-card-specs dt {
+  color: var(--text-muted);
+}
+
+.bike-card-specs dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.bike-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding: 0 4px;
+}
+
+.bike-card-price {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.bike-card-price-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .fleet {
+    padding-top: 72px;
+  }
+
+  .fleet-header {
+    margin-bottom: 32px;
+  }
+}

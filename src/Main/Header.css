@@ -1,51 +1,83 @@
-.appBar {
-  background-color: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: blur(5px);
+.header {
+  position: sticky;
+  top: 0;
   z-index: 1000;
+  background: rgba(14, 15, 17, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
 
-.toolbar {
+.header-nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  gap: 12px 32px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
-.leftSideBox {
+.header-logo {
   display: flex;
   align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
 }
 
-.logo {
-  height: 80px;
-  margin-right: 16px;
+.header-logo-mark {
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  transform: skewX(-12deg);
 }
 
-.rightSideBox {
+.header-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: 28px;
+  margin-left: auto;
 }
 
-@media (max-width: 900px) {
-  .toolbar {
-    justify-content: center;
+.header-link {
+  color: var(--text-soft);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.header-link:hover {
+  color: var(--text);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-phone {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+@media (max-width: 960px) {
+  .header-links {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .header-logo {
+    font-size: 22px;
   }
 
-  .logo {
-    height: 48px;
-    margin-right: 8px;
-  }
-
-  .site-title {
-    font-size: 1rem !important;
-  }
-
-  .rightSideBox {
-    justify-content: center;
-    gap: 8px;
+  .header-phone {
+    display: none;
   }
 }

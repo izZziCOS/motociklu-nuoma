@@ -1,22 +1,38 @@
-import { fireEvent, render, screen } from "@testing-library/react"
+import { fireEvent, render, screen, within } from "@testing-library/react"
 import App from "./App"
-import { normalizePhone, validate } from "./Reusable/PopupDialog"
+import { normalizePhone, validate } from "./Reusable/EnquiryDialog"
 
 test("renders the hero and sections", () => {
   render(<App />)
-  expect(screen.getByText(/JŪSŲ NUOTYKIAI PRASIDEDA ČIA/i)).toBeInTheDocument()
-  expect(screen.getByText(/Nuomojami motociklai/i)).toBeInTheDocument()
-  expect(screen.getByText(/Suteikiami draudimai/i)).toBeInTheDocument()
+  expect(
+    screen.getByRole("heading", { level: 1, name: /Jūsų nuotykiai/i }),
+  ).toBeInTheDocument()
+  expect(screen.getByText("Nuomojami motociklai")).toBeInTheDocument()
+  expect(
+    screen.getByText("Kaip tai veikia", { selector: "h2" }),
+  ).toBeInTheDocument()
+  expect(screen.getByText("Suteikiami draudimai")).toBeInTheDocument()
 })
 
-test("motorcycle switcher cycles through items", () => {
+test("lists every motorcycle with its price", () => {
   render(<App />)
-  expect(screen.getByText("1 / 3")).toBeInTheDocument()
-  fireEvent.click(screen.getByLabelText("Kitas motociklas"))
-  expect(screen.getByText("2 / 3")).toBeInTheDocument()
-  fireEvent.click(screen.getByLabelText("Ankstesnis motociklas"))
-  fireEvent.click(screen.getByLabelText("Ankstesnis motociklas"))
-  expect(screen.getByText("3 / 3")).toBeInTheDocument()
+  expect(screen.getAllByRole("article")).toHaveLength(3)
+  expect(screen.getByText("130 €")).toBeInTheDocument()
+  expect(screen.getByText("140 €")).toBeInTheDocument()
+  expect(screen.getByText("150 €")).toBeInTheDocument()
+})
+
+test("reserving a motorcycle opens the enquiry with that bike", () => {
+  render(<App />)
+  fireEvent.click(
+    screen.getByRole("button", {
+      name: "Rezervuoti Honda CBR1000RR Fireblade",
+    }),
+  )
+  const dialog = screen.getByRole("dialog")
+  expect(
+    within(dialog).getByText("Motociklas: Honda CBR1000RR Fireblade"),
+  ).toBeInTheDocument()
 })
 
 test("phone validation accepts common formats", () => {
@@ -27,11 +43,18 @@ test("phone validation accepts common formats", () => {
   expect(validate({ name: "Jonas", phone: "abc" })).toHaveProperty("phone")
 })
 
-test("enquiry form can be submitted again after being closed", () => {
+test("enquiry form validates required fields", () => {
   render(<App />)
-  fireEvent.click(screen.getAllByText("Pateikti užklausą")[0])
-  fireEvent.click(screen.getByText("Uždaryti"))
-  fireEvent.click(screen.getAllByText("Pateikti užklausą")[0])
-  fireEvent.click(screen.getByRole("button", { name: "Pateikti užklausą" }))
-  expect(screen.getByText("Vardas yra privalomas.")).toBeInTheDocument()
+  const [headerButton] = screen.getAllByRole("button", {
+    name: "Pateikti užklausą",
+  })
+  fireEvent.click(headerButton)
+  const dialog = screen.getByRole("dialog")
+  fireEvent.click(
+    within(dialog).getByRole("button", { name: "Pateikti užklausą" }),
+  )
+  expect(within(dialog).getByText("Vardas yra privalomas.")).toBeInTheDocument()
+  expect(
+    within(dialog).getByText("Telefono numeris yra privalomas."),
+  ).toBeInTheDocument()
 })

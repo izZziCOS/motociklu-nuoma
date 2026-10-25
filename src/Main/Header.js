@@ -1,45 +1,36 @@
 import React from "react"
-import AppBar from "@mui/material/AppBar"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
-import Box from "@mui/material/Box"
-import OutlinedButton from "../Reusable/OutlinedButton"
-import PopupDialog from "../Reusable/PopupDialog"
-import { PHONE_HREF, PHONE_NUMBER, VIBER_HREF, WHATSAPP_HREF } from "../config"
+import { PHONE_DISPLAY, PHONE_HREF } from "../config"
 import "./Header.css"
 
-function Header() {
+function Header({ onEnquire }) {
   return (
-    <AppBar position="sticky" className="appBar">
-      <Toolbar className="toolbar">
-        <Box className="leftSideBox">
-          <Box
-            component="img"
-            className="logo"
-            alt=""
-            src={`${process.env.PUBLIC_URL}/header-motorcycle.png`}
-          />
-          <Typography variant="h6" component="div" className="site-title">
-            Žiedo motociklų nuoma Lietuvoje
-          </Typography>
-        </Box>
-        <Box className="rightSideBox">
-          <OutlinedButton text={PHONE_NUMBER} href={PHONE_HREF} />
-          <OutlinedButton
-            text="WhatsApp"
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-          />
-          <OutlinedButton text="Viber" href={VIBER_HREF} />
-          <PopupDialog
-            buttonText="Pateikti užklausą"
-            dialogTitle="Sužinokite apie motociklo nuomą per 10 minučių"
-            dialogContent="Palikite kontaktinius duomenis ir mes jums paskambinsime 10 minučių bėgyje."
-          />
-        </Box>
-      </Toolbar>
-    </AppBar>
+    <header className="header">
+      <nav className="container header-nav" aria-label="Pagrindinė navigacija">
+        <a href="#top" className="header-logo">
+          <span className="header-logo-mark" aria-hidden="true" />
+          Žiedo nuoma
+        </a>
+        <div className="header-links">
+          <a href="#fleet" className="header-link">
+            Motociklai
+          </a>
+          <a href="#steps" className="header-link">
+            Kaip tai veikia
+          </a>
+          <a href="#insurance" className="header-link">
+            Draudimas
+          </a>
+        </div>
+        <div className="header-actions">
+          <a href={PHONE_HREF} className="header-phone">
+            {PHONE_DISPLAY}
+          </a>
+          <button type="button" className="btn btn--accent" onClick={onEnquire}>
+            Pateikti užklausą
+          </button>
+        </div>
+      </nav>
+    </header>
   )
 }
 

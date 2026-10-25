@@ -1,0 +1,44 @@
+.insurance {
+  padding-top: 48px;
+  padding-bottom: 112px;
+}
+
+.insurance-heading {
+  margin-bottom: 48px;
+}
+
+.insurance-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.insurance-card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.insurance-icon {
+  color: var(--accent);
+}
+
+.insurance-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .insurance {
+    padding-bottom: 72px;
+  }
+}

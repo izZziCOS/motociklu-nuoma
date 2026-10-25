@@ -2,57 +2,54 @@ const asset = (file) => `${process.env.PUBLIC_URL}/${file}`
 
 export const motorcycles = [
   {
-    name: "Kawasaki",
+    id: "zx10r",
+    brand: "Kawasaki",
+    model: "Ninja ZX-10R",
     imageSrc: asset("motorcycle-kawasaki.webp"),
-    specs: [
-      ["Variklis", "998 cm³ keturių cilindrų"],
-      ["Elektronika", "IMU"],
-      ["Pakaba", "KYB teleskopinė pakaba"],
-      ["Transmisija", "6 greičių mechaninė pavarų dėžė su šlapia sankaba"],
-      ["Pavarų perjungiklis", "Greita pavarų perjungimo sistema"],
-      ["Maksimalus greitis", "280 km/h"],
-    ],
+    topSpeed: "280 km/h",
+    suspension: "KYB",
     pricePerDay: 130,
   },
   {
-    name: "Kawasaki",
+    id: "zx10r-krt",
+    brand: "Kawasaki",
+    model: "Ninja ZX-10R KRT",
     imageSrc: asset("motorcycle-kawasaki2.webp"),
-    specs: [
-      ["Variklis", "998 cm³ keturių cilindrų"],
-      ["Elektronika", "IMU"],
-      ["Pakaba", "Showa Balance Free Front Forks"],
-      ["Transmisija", "6 greičių mechaninė pavarų dėžė su šlapia sankaba"],
-      ["Pavarų perjungiklis", "Greita pavarų perjungimo sistema"],
-      ["Maksimalus greitis", "290 km/h"],
-    ],
+    topSpeed: "290 km/h",
+    suspension: "Showa BFF",
     pricePerDay: 140,
   },
   {
-    name: "Honda",
+    id: "fireblade",
+    brand: "Honda",
+    model: "CBR1000RR Fireblade",
     imageSrc: asset("motorcycle-honda.webp"),
-    specs: [
-      ["Variklis", "998 cm³ keturių cilindrų"],
-      ["Elektronika", "IMU"],
-      ["Pakaba", "Öhlins Series 3 elektroninė pakaba"],
-      ["Transmisija", "6 greičių mechaninė pavarų dėžė su šlapia sankaba"],
-      ["Pavarų perjungiklis", "Greita pavarų perjungimo sistema"],
-      ["Maksimalus greitis", "310 km/h"],
-    ],
+    topSpeed: "310 km/h",
+    suspension: "Öhlins Series 3",
     pricePerDay: 150,
   },
 ]
 
+export const steps = [
+  {
+    title: "Pateikite užklausą",
+    text: "Palikite vardą ir telefono numerį – užtruks mažiau nei minutę.",
+  },
+  {
+    title: "Paskambinsime per 10 min.",
+    text: "Suderinsime datą, motociklą ir reikalingą draudimą.",
+  },
+  {
+    title: "Į trasą",
+    text: "Atsiimkite paruoštą motociklą ir mėgaukitės žiedu.",
+  },
+]
+
 export const insurances = [
+  { icon: "shield", text: "Motociklo KASKO draudimas" },
+  { icon: "heart", text: "Vairuotojo sveikatos draudimas" },
   {
-    imageSrc: asset("crash.jpg"),
-    text: "Motociklo KASKO draudimas",
-  },
-  {
-    imageSrc: asset("life-insurance.jpg"),
-    text: "Vairuotojo sveikatos draudimas",
-  },
-  {
-    imageSrc: asset("insurance.jpg"),
+    icon: "document",
     text: "Privalomasis vairuotojų civilinės atsakomybės draudimas",
   },
 ]

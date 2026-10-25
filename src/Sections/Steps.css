@@ -1,0 +1,45 @@
+.steps {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.steps-heading {
+  margin-bottom: 48px;
+}
+
+.steps-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 24px;
+  border-top: 3px solid var(--accent);
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1;
+  color: #5b616a;
+}
+
+.step-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.step-text {
+  margin: 0;
+  color: var(--text-muted);
+}

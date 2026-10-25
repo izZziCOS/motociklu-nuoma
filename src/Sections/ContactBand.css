@@ -1,0 +1,43 @@
+.contact-band {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.contact-band-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contact-band-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 620px;
+}
+
+.contact-band-lead {
+  margin: 0;
+  font-size: 19px;
+}
+
+.contact-band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-band .btn:focus-visible {
+  outline-color: var(--on-accent);
+}
+
+@media (max-width: 600px) {
+  .contact-band-inner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
