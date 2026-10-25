@@ -3,7 +3,7 @@ const asset = (file) => `${process.env.PUBLIC_URL}/${file}`
 export const motorcycles = [
   {
     name: "Kawasaki",
-    imageSrc: asset("motorcycle-kawasaki.jpg"),
+    imageSrc: asset("motorcycle-kawasaki.webp"),
     specs: [
       ["Variklis", "998 cm³ keturių cilindrų"],
       ["Elektronika", "IMU"],
@@ -16,7 +16,7 @@ export const motorcycles = [
   },
   {
     name: "Kawasaki",
-    imageSrc: asset("motorcycle-kawasaki2.jpg"),
+    imageSrc: asset("motorcycle-kawasaki2.webp"),
     specs: [
       ["Variklis", "998 cm³ keturių cilindrų"],
       ["Elektronika", "IMU"],
@@ -29,7 +29,7 @@ export const motorcycles = [
   },
   {
     name: "Honda",
-    imageSrc: asset("motorcycle-honda.jpg"),
+    imageSrc: asset("motorcycle-honda.webp"),
     specs: [
       ["Variklis", "998 cm³ keturių cilindrų"],
       ["Elektronika", "IMU"],

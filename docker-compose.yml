@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        REACT_APP_FORM_ENDPOINT: ${REACT_APP_FORM_ENDPOINT:-}
+    ports:
+      - "${PORT:-3080}:80"
+    restart: unless-stopped

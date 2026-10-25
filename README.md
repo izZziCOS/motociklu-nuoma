@@ -12,6 +12,17 @@ npm install
 npm start          # dev server on http://localhost:3000
 ```
 
+## Docker
+
+```sh
+docker compose up -d --build   # http://localhost:3080
+docker compose down
+docker build --target test .   # lint + tests only
+```
+
+Set `PORT` to change the host port and `REACT_APP_FORM_ENDPOINT` to wire up
+the enquiry form (both read from the shell or a `.env` file).
+
 ## Scripts
 
 | Command          | Description                               |

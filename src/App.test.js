@@ -1,5 +1,4 @@
-import { render, screen } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
+import { fireEvent, render, screen } from "@testing-library/react"
 import App from "./App"
 import { normalizePhone, validate } from "./Reusable/PopupDialog"
 
@@ -13,10 +12,10 @@ test("renders the hero and sections", () => {
 test("motorcycle switcher cycles through items", () => {
   render(<App />)
   expect(screen.getByText("1 / 3")).toBeInTheDocument()
-  userEvent.click(screen.getByLabelText("Kitas motociklas"))
+  fireEvent.click(screen.getByLabelText("Kitas motociklas"))
   expect(screen.getByText("2 / 3")).toBeInTheDocument()
-  userEvent.click(screen.getByLabelText("Ankstesnis motociklas"))
-  userEvent.click(screen.getByLabelText("Ankstesnis motociklas"))
+  fireEvent.click(screen.getByLabelText("Ankstesnis motociklas"))
+  fireEvent.click(screen.getByLabelText("Ankstesnis motociklas"))
   expect(screen.getByText("3 / 3")).toBeInTheDocument()
 })
 
@@ -30,9 +29,9 @@ test("phone validation accepts common formats", () => {
 
 test("enquiry form can be submitted again after being closed", () => {
   render(<App />)
-  userEvent.click(screen.getAllByText("Pateikti užklausą")[0])
-  userEvent.click(screen.getByText("Uždaryti"))
-  userEvent.click(screen.getAllByText("Pateikti užklausą")[0])
-  userEvent.click(screen.getByRole("button", { name: "Pateikti užklausą" }))
+  fireEvent.click(screen.getAllByText("Pateikti užklausą")[0])
+  fireEvent.click(screen.getByText("Uždaryti"))
+  fireEvent.click(screen.getAllByText("Pateikti užklausą")[0])
+  fireEvent.click(screen.getByRole("button", { name: "Pateikti užklausą" }))
   expect(screen.getByText("Vardas yra privalomas.")).toBeInTheDocument()
 })
