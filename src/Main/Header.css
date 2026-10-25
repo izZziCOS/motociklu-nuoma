@@ -1,13 +1,17 @@
 .appBar {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: blur(5px);
   z-index: 1000;
 }
 
 .toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 8px 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .leftSideBox {
@@ -16,11 +20,32 @@
 }
 
 .logo {
-  height: 100px;
+  height: 80px;
   margin-right: 16px;
 }
 
 .rightSideBox {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+@media (max-width: 900px) {
+  .toolbar {
+    justify-content: center;
+  }
+
+  .logo {
+    height: 48px;
+    margin-right: 8px;
+  }
+
+  .site-title {
+    font-size: 1rem !important;
+  }
+
+  .rightSideBox {
+    justify-content: center;
+    gap: 8px;
+  }
 }

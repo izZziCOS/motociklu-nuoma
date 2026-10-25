@@ -9,14 +9,15 @@ const ImageTextGrid = ({ items }) => {
   return (
     <Box className="image-text-grid-container">
       <Grid container spacing={2} justifyContent="center">
-        {items.map((item, index) => (
-          <Grid item xs={12} sm={4} key={index}>
+        {items.map((item) => (
+          <Grid item xs={12} sm={4} key={item.text}>
             <Box className="image-text-grid-item">
               <Box className="image-box">
                 <CardMedia
                   component="img"
                   image={item.imageSrc}
-                  alt={`Image ${index + 1}`}
+                  alt=""
+                  loading="lazy"
                   className="image"
                 />
               </Box>

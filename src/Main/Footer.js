@@ -3,9 +3,11 @@ import "./Footer.css"
 
 function Footer() {
   return (
-    <div className="footer">
-      <p className="footer-text">© 2024 UAB "Track Bike Rentals LT"</p>
-    </div>
+    <footer className="footer">
+      <p className="footer-text">
+        © {new Date().getFullYear()} UAB &quot;Track Bike Rentals LT&quot;
+      </p>
+    </footer>
   )
 }
 

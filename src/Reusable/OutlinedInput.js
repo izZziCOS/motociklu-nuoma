@@ -1,6 +1,5 @@
 import React from "react"
 import TextField from "@mui/material/TextField"
-import "./OutlinedInput.css"
 
 function OutlinedInput({ label, ...props }) {
   return (

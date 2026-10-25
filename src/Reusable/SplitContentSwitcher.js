@@ -2,81 +2,69 @@ import React, { useState } from "react"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import IconButton from "@mui/material/IconButton"
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos"
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos"
 import "./SplitContentSwitcher.css"
 
-const contentData = [
-  {
-    imageSrc: `${process.env.PUBLIC_URL}/motorcycle-kawasaki.jpg`,
-    text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
-           <strong>Elektronika:</strong>  IMU.<br>
-           <strong>Pakaba:</strong>  KYB teleskopinė pakaba.<br>
-           <strong>Transmisija:</strong>  6 greičių mechaninė pavarų dėžė su šlapia sankaba.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.<br>
-           <strong>Top greitis:</strong>  280km/h.
-           <br><br>
-           <strong>Kaina 1d. -</strong>  130€<br>`,
-  },
-  {
-    imageSrc: `${process.env.PUBLIC_URL}/motorcycle-kawasaki2.jpg`,
-    text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
-           <strong>Elektronika:</strong>  IMU.<br>
-           <strong>Pakaba:</strong>  Showa Balance Free Front Forks.<br>
-           <strong>Transmisija:</strong>  6 greičių mechaninė pavarų dėžė su šlapia sankaba.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.<br>
-           <strong>Top greitis:</strong>  290km/h.
-           <br><br>
-           <strong>Kaina 1d. -</strong>  140€<br>`,
-  },
-  {
-    imageSrc: `${process.env.PUBLIC_URL}/motorcycle-honda.jpg`,
-    text: `<strong>Variklis:</strong>  998 cm³ keturių cilindrų.<br>
-           <strong>Elektronika:</strong>  IMU.<br>
-           <strong>Pakaba:</strong>  Öhlins  Series 3 elektroninė pakaba.<br>
-           <strong>Transmisija:</strong>  6 greičių mechaninė pavarų dėžė su šlapia sankaba.<br>
-           <strong>Pavarų perjungiklis:</strong>  Greita pavarų perjungimo sistema.<br>
-           <strong>Top greitis:</strong>  310km/h.
-           <br><br>
-           <strong>Kaina 1d. -</strong>  150€<br>`,
-  },
-]
-
-function SplitContentSwitcher() {
+function SplitContentSwitcher({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const current = items[currentIndex]
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % contentData.length)
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length)
   }
 
   const handlePrevious = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + contentData.length) % contentData.length,
+      (prevIndex) => (prevIndex - 1 + items.length) % items.length,
     )
   }
 
   return (
     <Box className="split-container">
-      <Box className="split-image">
-        <IconButton className="nav-button left" onClick={handlePrevious}>
-          <ArrowBackIosIcon />
-        </IconButton>
-        <img
-          src={contentData[currentIndex].imageSrc}
-          alt="Content"
-          className="content-image"
-        />
+      <IconButton
+        className="nav-button"
+        onClick={handlePrevious}
+        aria-label="Ankstesnis motociklas"
+      >
+        <ArrowBackIosNewIcon />
+      </IconButton>
+
+      <Box className="split-content">
+        <Box className="split-image">
+          <img
+            src={current.imageSrc}
+            alt={`${current.name} motociklas`}
+            className="content-image"
+          />
+        </Box>
+        <Box className="split-text">
+          <Typography variant="h5" component="h3" className="content-title">
+            {current.name}
+          </Typography>
+          <dl className="content-specs">
+            {current.specs.map(([label, value]) => (
+              <div key={label}>
+                <dt>{label}:</dt> <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+          <Typography className="content-price">
+            Kaina 1 d. – <strong>{current.pricePerDay} €</strong>
+          </Typography>
+          <Typography className="content-counter">
+            {currentIndex + 1} / {items.length}
+          </Typography>
+        </Box>
       </Box>
-      <Box className="split-text">
-        <Typography
-          variant="body1"
-          className="content-text"
-          dangerouslySetInnerHTML={{ __html: contentData[currentIndex].text }}
-        />
-        <IconButton className="nav-button right" onClick={handleNext}>
-          <ArrowForwardIosIcon />
-        </IconButton>
-      </Box>
+
+      <IconButton
+        className="nav-button"
+        onClick={handleNext}
+        aria-label="Kitas motociklas"
+      >
+        <ArrowForwardIosIcon />
+      </IconButton>
     </Box>
   )
 }
