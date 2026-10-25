@@ -14,11 +14,17 @@ function Header({ onEnquire }) {
           <a href="#fleet" className="header-link">
             Motociklai
           </a>
-          <a href="#steps" className="header-link">
-            Kaip tai veikia
+          <a href="#packages" className="header-link">
+            Paketai
           </a>
-          <a href="#insurance" className="header-link">
-            Draudimas
+          <a href="#tracks" className="header-link">
+            Trasos
+          </a>
+          <a href="#booking" className="header-link">
+            Kaina
+          </a>
+          <a href="#faq" className="header-link">
+            DUK
           </a>
         </div>
         <div className="header-actions">

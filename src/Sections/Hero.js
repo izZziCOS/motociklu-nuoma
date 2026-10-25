@@ -1,10 +1,16 @@
 import React from "react"
 import { PHONE_HREF } from "../config"
+import { motorcycles, packages, tracks } from "../data"
+import { formatPrice, packagePrice } from "../pricing"
 import "./Hero.css"
 
 const stats = [
-  { value: "3", label: "superbike'ai parke" },
-  { value: "nuo 130 €", label: "už dieną" },
+  { value: String(motorcycles.length), label: "superbike'ai parke" },
+  { value: String(tracks.length), label: "trasos Lietuvoje ir Latvijoje" },
+  {
+    value: `nuo ${formatPrice(packagePrice(packages[0], motorcycles[0]))}`,
+    label: "už pusę dienos trasoje",
+  },
   { value: "10 min.", label: "ir mes jums paskambinsime" },
 ]
 

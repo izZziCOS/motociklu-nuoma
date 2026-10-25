@@ -5,11 +5,27 @@ import Header from "./Main/Header"
 import Footer from "./Main/Footer"
 import Hero from "./Sections/Hero"
 import Fleet from "./Sections/Fleet"
+import Packages from "./Sections/Packages"
+import Tracks from "./Sections/Tracks"
+import Booking from "./Sections/Booking"
 import Steps from "./Sections/Steps"
+import Requirements from "./Sections/Requirements"
 import Insurance from "./Sections/Insurance"
+import Reviews from "./Sections/Reviews"
+import Faq from "./Sections/Faq"
 import ContactBand from "./Sections/ContactBand"
 import EnquiryDialog from "./Reusable/EnquiryDialog"
-import { insurances, motorcycles, steps } from "./data"
+import {
+  faqs,
+  gear,
+  insurances,
+  motorcycles,
+  packages,
+  requirements,
+  reviews,
+  steps,
+  tracks,
+} from "./data"
 
 const theme = createTheme({
   palette: {
@@ -24,11 +40,31 @@ const theme = createTheme({
   shape: { borderRadius: 10 },
 })
 
-function App() {
-  const [enquiry, setEnquiry] = useState({ open: false, bike: null })
+const initialBooking = {
+  bikeId: motorcycles[0].id,
+  trackId: tracks[0].id,
+  format: "full",
+  days: 1,
+  date: "",
+  extras: { gear: false, instructor: false },
+}
 
-  const openEnquiry = (bike = null) => setEnquiry({ open: true, bike })
+const scrollToBooking = () => {
+  document.getElementById("booking")?.scrollIntoView?.({ behavior: "smooth" })
+}
+
+function App() {
+  const [enquiry, setEnquiry] = useState({ open: false, details: null })
+  const [booking, setBooking] = useState(initialBooking)
+
+  const openEnquiry = (details = null) => setEnquiry({ open: true, details })
   const closeEnquiry = () => setEnquiry((prev) => ({ ...prev, open: false }))
+
+  const updateBooking = (patch) => setBooking((prev) => ({ ...prev, ...patch }))
+  const preselect = (patch) => {
+    updateBooking(patch)
+    scrollToBooking()
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,15 +72,39 @@ function App() {
         <Header onEnquire={() => openEnquiry()} />
         <main>
           <Hero />
-          <Fleet items={motorcycles} onReserve={openEnquiry} />
+          <Fleet
+            items={motorcycles}
+            onReserve={(bike) => preselect({ bikeId: bike.id })}
+          />
+          <Packages
+            items={packages}
+            fromBike={motorcycles[0]}
+            onChoose={(pkg) =>
+              preselect({ format: pkg.format, days: pkg.days })
+            }
+          />
+          <Tracks
+            items={tracks}
+            onChoose={(track) => preselect({ trackId: track.id })}
+          />
+          <Booking
+            bikes={motorcycles}
+            tracks={tracks}
+            booking={booking}
+            onChange={updateBooking}
+            onSubmit={openEnquiry}
+          />
           <Steps items={steps} />
+          <Requirements requirements={requirements} gear={gear} />
           <Insurance items={insurances} />
+          <Reviews items={reviews} />
+          <Faq items={faqs} />
           <ContactBand onEnquire={() => openEnquiry()} />
         </main>
         <Footer />
         <EnquiryDialog
           open={enquiry.open}
-          bike={enquiry.bike}
+          details={enquiry.details}
           onClose={closeEnquiry}
         />
       </div>

@@ -1,0 +1,101 @@
+.packages-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.package {
+  position: relative;
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 28px 28px;
+}
+
+.package--featured {
+  border: 2px solid var(--accent);
+}
+
+.package-badge {
+  position: absolute;
+  top: -14px;
+  left: 28px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.package-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.package-duration {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.package-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.package-description {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.package-price {
+  margin: 0;
+}
+
+.package-price-from {
+  color: var(--text-muted);
+}
+
+.package-price-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.package-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.package-features svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+.package .btn {
+  margin-top: auto;
+}

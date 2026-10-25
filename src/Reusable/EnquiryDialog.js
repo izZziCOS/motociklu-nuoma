@@ -28,7 +28,7 @@ export const validate = ({ name, phone }) => {
   return errors
 }
 
-const sendEnquiry = async ({ name, phone, bike }) => {
+const sendEnquiry = async ({ name, phone, details }) => {
   if (FORM_ENDPOINT) {
     const response = await fetch(FORM_ENDPOINT, {
       method: "POST",
@@ -36,7 +36,7 @@ const sendEnquiry = async ({ name, phone, bike }) => {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ name, phone, bike }),
+      body: JSON.stringify({ name, phone, details }),
     })
     if (!response.ok) {
       throw new Error(`Form endpoint responded with ${response.status}`)
@@ -46,7 +46,7 @@ const sendEnquiry = async ({ name, phone, bike }) => {
 
   const lines = [
     "Sveiki, norėčiau sužinoti apie motociklo nuomą.",
-    bike && `Motociklas: ${bike}`,
+    details && `Užklausa: ${details}`,
     `Vardas: ${name}`,
     `Telefonas: ${phone}`,
   ]
@@ -58,7 +58,7 @@ const sendEnquiry = async ({ name, phone, bike }) => {
   )
 }
 
-function EnquiryDialog({ open, bike, onClose }) {
+function EnquiryDialog({ open, details, onClose }) {
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
   const [errors, setErrors] = useState({})
@@ -84,7 +84,7 @@ function EnquiryDialog({ open, bike, onClose }) {
       await sendEnquiry({
         name: name.trim(),
         phone: normalizePhone(phone),
-        bike,
+        details,
       })
       setStatus("sent")
     } catch {
@@ -116,9 +116,9 @@ function EnquiryDialog({ open, bike, onClose }) {
           </Alert>
         ) : (
           <>
-            {bike && (
+            {details && (
               <Chip
-                label={`Motociklas: ${bike}`}
+                label={details}
                 color="primary"
                 variant="outlined"
                 sx={{ mb: 1 }}

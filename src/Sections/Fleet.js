@@ -3,9 +3,15 @@ import "./Fleet.css"
 
 function Fleet({ items, onReserve }) {
   return (
-    <section id="fleet" className="container fleet">
+    <section
+      id="fleet"
+      className="container fleet"
+      aria-labelledby="fleet-title"
+    >
       <div className="fleet-header">
-        <h2 className="display-heading">Nuomojami motociklai</h2>
+        <h2 id="fleet-title" className="display-heading">
+          Nuomojami motociklai
+        </h2>
         <p className="fleet-intro">
           998 cm³, keturi cilindrai, IMU elektronika ir greitas pavarų
           perjungimas – visi trys.
@@ -51,7 +57,7 @@ function Fleet({ items, onReserve }) {
                 <button
                   type="button"
                   className="btn btn--accent"
-                  onClick={() => onReserve(name)}
+                  onClick={() => onReserve(bike)}
                   aria-label={`Rezervuoti ${name}`}
                 >
                   Rezervuoti
